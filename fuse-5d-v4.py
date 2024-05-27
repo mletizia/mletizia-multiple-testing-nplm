@@ -16,13 +16,13 @@ tests = ['t','avg-f','avg-exp-f'] # ['t','avg-f','avg-exp-f']
 flk_sigmas =  [0.32,0.77,1.79,3.18,4.23]#1,10,50,90,99 percentiles
 M          = [10000,10000,10000,10000,10000]
 lam        = [1e-6,1e-6,1e-6,1e-6,1e-6]
-Ntoys      = 1000
+Ntoys      = 300
 
 # problem definition
 sig = 'EFT' # Z200, Z300, EFT, EFT2, EFT5
 N_ref      = 100000
 N_Bkg      = 20000
-N_Sig      = 0
+N_Sig      = 41
 weight    = N_Bkg*1./N_ref
 dim = 6
 tr_dim = 5
