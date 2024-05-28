@@ -62,7 +62,9 @@ def fusion(x,T):
     return T * logsumexp(1/T*x, axis=1, b=1/x.shape[1])
 
 def bootstrap_pn(pn,rng=None):
-
+    # if rng=None, check_rng(rng) returns a rnd numb generator with random seed
+    # if rng=int, check_rng(rng) returns a rnd numb generator with seed=int
+    # if rng=np.rando.default_rng(seed), check_rng(rng) returns the rnd number generator with the given seed
     rnd = check_rng(rng)
 
     return rnd.choice(pn,size=len(pn))
