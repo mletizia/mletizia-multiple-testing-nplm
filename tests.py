@@ -28,6 +28,14 @@ def avg_p(ref,data,rng=None):
     p_ref, p_data = return_pvalues(ref,data,rng=rng)
     return -np.log(np.mean(p_ref,axis=1)), -np.log(np.mean(p_data,axis=1))
 
+def prod_p(ref,data,rng=None):
+    # ref: n_refxd numpy array
+    # data: n_dataxd numpy array
+
+    p_ref, p_data = return_pvalues(ref,data,rng=rng)
+    return -np.sum(np.log(p_ref),axis=1), -np.sum(np.log(p_data),axis=1)
+    #return -np.log(np.mean(p_ref,axis=1)), -np.log(np.mean(p_data,axis=1))
+
 def fused_t(ref,data,T):
     fused_ref = fusion(ref,T)
     fused_data = fusion(data,T)
